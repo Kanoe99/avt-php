@@ -5,8 +5,9 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-$users = $db->query('select * from users where approved = :approved', [
-    ':approved' => true
+$users = $db->query('select * from users where approved = :approved and role = :role', [
+    ':approved' => true,
+    ':role' => 'user'
 ])->get();
 
 $not_approved = $db->query('select * from users where approved = :approved', [

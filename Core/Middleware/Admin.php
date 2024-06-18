@@ -27,13 +27,11 @@ class Admin
     public function handle()
     {
         if (!isset($_SESSION['user'])) {
-            header('Location: /');
-            exit();
+            redirect('/');
         }
 
         if (!$this->admin) {
-            header('Location: /');
-            exit();
+            redirect('/');
         }
     }
 }

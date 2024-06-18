@@ -15,5 +15,4 @@ $db->query('delete from news where id = :id', [
     'id' => $_POST['id']
 ]);
 
-header('location: /news');
-exit();
+redirect('/nerws');

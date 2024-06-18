@@ -22,5 +22,4 @@ $db->query('INSERT INTO news(body) VALUES(:body)', [
     'body' => $_POST['body']
 ]);
 
-header('location: /news');
-die();
+redirect('/news');

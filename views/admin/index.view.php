@@ -14,8 +14,8 @@
                         <div class="flex gap-4">
                             <form action="/admin" method="post">
                                 <input type="hidden" name="_method" value="PATCH">
-                                <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                 <button type="submit" class="px-6 py-4 bg-green-500 text-white font-bold rounded-md">Подтвердить</button>
+                                <input type="hidden" name="id" value="<?= $user['id'] ?>">
                             </form>
                             <form action="/admin" method="post">
                                 <input type="hidden" name="_method" value="DELETE">

@@ -12,7 +12,7 @@ $note = $db->query('select * from news where id = :id', [
 ])->findOrFail();
 
 view("news/edit", [
-    'heading' => 'Редактировать запись',
+    'heading' => 'Редактировать новость',
     'errors' => [],
     'note' => $note
 ]);

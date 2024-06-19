@@ -12,6 +12,6 @@ $note = $db->query('select * from news where id = :id', [
 ])->findOrFail();
 
 view("news/show", [
-    'heading' => 'Запись',
+    'heading' => 'Новость',
     'note' => $note
 ]);

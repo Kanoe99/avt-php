@@ -1,6 +1,6 @@
 <?php
 
 view("news/create", [
-    'heading' => 'Создать запись',
+    'heading' => 'Создать новость',
     'errors' => []
 ]);

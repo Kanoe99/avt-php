@@ -18,7 +18,7 @@ if (!Validator::string([$_POST['body']], 1, 1000)) {
 
 if (count($errors)) {
     return view('news/edit', [
-        'heading' => 'Редактировать запись',
+        'heading' => 'Редактировать новость',
         'errors' => $errors,
         'note' => $note
     ]);

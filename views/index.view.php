@@ -26,51 +26,60 @@
 
                 <!-- Buttons for fast access -->
                 <div class="absolute bottom-0 left-0 right-0 flex justify-center mt-2 -translate-y-1/2">
-                    <button class="mx-2 px-4 py-2 bg-[#4f46e5] text-white rounded-lg focus:outline-none" onclick="showItem(1)">1</button>
-                    <button class="mx-2 px-4 py-2 bg-[#4f46e5] text-white rounded-lg focus:outline-none" onclick="showItem(2)">2</button>
-                    <button class="mx-2 px-4 py-2 bg-[#4f46e5] text-white rounded-lg focus:outline-none" onclick="showItem(3)">3</button>
+                    <button class="mx-2 px-4 py-2 bg-[#4f46e5] text-white rounded-lg focus:outline-none"
+                        onclick="showItem(1)">1</button>
+                    <button class="mx-2 px-4 py-2 bg-[#4f46e5] text-white rounded-lg focus:outline-none"
+                        onclick="showItem(2)">2</button>
+                    <button class="mx-2 px-4 py-2 bg-[#4f46e5] text-white rounded-lg focus:outline-none"
+                        onclick="showItem(3)">3</button>
                     <!-- Add more buttons as needed -->
                 </div>
 
                 <!-- Navigation arrows -->
-                <button class="absolute right-20 bottom-0 transform -translate-y-1/2 px-3 py-2 bg-gray-500 text-white rounded-full focus:outline-none" onclick="prevItem()">
+                <button
+                    class="md:block hidden absolute right-20 bottom-0 transform -translate-y-1/2 px-3 py-2 bg-gray-500 text-white rounded-full focus:outline-none"
+                    onclick="prevItem()">
                     <!-- Arrow left icon -->
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
                         </path>
                     </svg>
                 </button>
-                <button class="absolute right-6 bottom-0 transform -translate-y-1/2 px-3 py-2 bg-gray-500 text-white rounded-full focus:outline-none" onclick="nextItem()">
+                <button
+                    class="md:block hidden absolute right-6 bottom-0 transform -translate-y-1/2 px-3 py-2 bg-gray-500 text-white rounded-full focus:outline-none"
+                    onclick="nextItem()">
                     <!-- Arrow right icon -->
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
             </div>
 
             <script>
-                function showItem(index) {
-                    const items = document.querySelectorAll('.carousel-item');
-                    items.forEach((item, i) => {
-                        const isActive = i + 1 === index;
-                        item.classList.toggle('active', isActive);
-                        item.classList.toggle('hidden', !isActive);
-                    });
-                }
+            function showItem(index) {
+                const items = document.querySelectorAll('.carousel-item');
+                items.forEach((item, i) => {
+                    const isActive = i + 1 === index;
+                    item.classList.toggle('active', isActive);
+                    item.classList.toggle('hidden', !isActive);
+                });
+            }
 
-                function nextItem() {
-                    const items = document.querySelectorAll('.carousel-item');
-                    const activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
-                    const nextIndex = (activeIndex + 1) % items.length;
-                    showItem(nextIndex + 1);
-                }
+            function nextItem() {
+                const items = document.querySelectorAll('.carousel-item');
+                const activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+                const nextIndex = (activeIndex + 1) % items.length;
+                showItem(nextIndex + 1);
+            }
 
-                function prevItem() {
-                    const items = document.querySelectorAll('.carousel-item');
-                    const activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
-                    const prevIndex = (activeIndex - 1 + items.length) % items.length;
-                    showItem(prevIndex + 1);
-                }
+            function prevItem() {
+                const items = document.querySelectorAll('.carousel-item');
+                const activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+                const prevIndex = (activeIndex - 1 + items.length) % items.length;
+                showItem(prevIndex + 1);
+            }
             </script>
         </div>
     </div>

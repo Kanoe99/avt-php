@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ЕТ Автоматика</title>
-    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="/tailwind.css">
 </head>
 
 <body class="h-full">
